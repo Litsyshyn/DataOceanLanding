@@ -1,0 +1,9 @@
+# Jet brains
+/.idea/
+
+# VS Code
+/.vscode/
+
+/.env
+/**/dist/**
+/node_modules/
