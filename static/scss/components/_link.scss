@@ -19,9 +19,9 @@
         font-size: $font-size-xxl;;
     }
 
-    &:hover {
+    // &:hover {
         //text-decoration: underline;
-    }
+    // }
 }
 
 .link_start:hover {
@@ -51,6 +51,7 @@
     cursor: pointer;
     border: none;
     background: none;
+    font-family: $headings-font-family;
     &_span {
         font-size: small;
         padding-left: 7%;
