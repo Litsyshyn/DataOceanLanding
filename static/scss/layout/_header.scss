@@ -26,19 +26,28 @@
         }
     }
 
+    @media (max-width: $lg) {
+        flex-direction: column;
+        text-align: center;
+    }
+
     @media (max-width: $sm) {
         flex-direction: row;
+        align-items: baseline;
     }
 }
 
 .header-logo {
     width: 15%; //200px;
     object-fit: contain;
-    margin-top: auto; //margin-top: $spacer * 3;
+    margin-top: unset; //margin-top: $spacer * 3;
     margin-left: 7%; //margin-left: $spacer * 11;
-    
+
     @media (max-width: $sm) {
         width: 40%;
         margin-left: 0px;
+    }
+    @media (max-width: $xl) {
+        margin-bottom: 2%;
     }
 }

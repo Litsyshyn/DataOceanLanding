@@ -24,6 +24,7 @@
     
     @media screen and (min-width: $sm) {
         flex-direction: row;
+        display: contents;
         &_align-left {
             align-items: center;
         }
@@ -33,6 +34,21 @@
             & + & {
                 margin-top: 0;
                 margin-left: $spacer * 3;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $sm) { 
+    .navigation {
+        display: none;
+        text-align: right;
+        &__item {
+            display: block;
+
+            & + & {
+                margin-top: 5%;
+                text-align: center;
             }
         }
     }
