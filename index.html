@@ -12,7 +12,11 @@
     <div class="landing-dots">
         <header id="header" class="container header">
             <img src="static/img/logo.png" class="header-logo header__item">
-            <ul class="navigation header__item">
+            <nav>
+                <a href="#" id="menu-btn" class="menu-btn">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </a>
+                <ul id="navigation" class="navigation header__item">
                     <a class="navigation__item link link_start" href="#product">
                         <span lang="uk">Про Data Platform</span>
                         <span lang="en">About Data Platform</span>
@@ -31,7 +35,8 @@
                         <img lang="uk" src="static/img/usa_flag.svg">
                         <span class="select_lang_span" lang="uk">English</span>
                     </button>
-                </ul>  
+                </ul> 
+            </nav>
         </header>
 
         <section class="header section section_head">
@@ -194,11 +199,11 @@
                         <span lang="uk">Зручний доступ до даних за допомогою Rest API для розробників програмного забезпечення.</span>
                         <span lang="en">An easy access to the data, using the Rest API for software developers.</span>
                     </div>
-                    <div class="api-documentation">
+                    <div class="api-doc">
                         <a id="api-docs">
                             <ion-icon name="document-text-outline"></ion-icon>
-                            <span lang="uk">Переглянути документацію API</span>
-                            <span lang="en">View API documentation</span>
+                            <span class="api-documentation" lang="uk">Переглянути документацію API</span>
+                            <span class="api-documentation" lang="en">View API documentation</span>
                         </a>
                         <button id="api-button" class="btn-primary btn-primary_api">
                             <span lang="uk">Спробувати безкоштовно</span>

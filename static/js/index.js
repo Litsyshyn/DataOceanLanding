@@ -264,3 +264,8 @@ $('#api-docs').on('click', function () {
 $('#api-button').on('click', function () {
     window.open(process.env.DO_FRONTEND_HOST + '/system/home/?lang=' + localStorage.getItem('lang')); 
 });
+
+$('#menu-btn').on('click', function (event) {
+    event.preventDefault();
+    $('#navigation').fadeToggle();
+});
