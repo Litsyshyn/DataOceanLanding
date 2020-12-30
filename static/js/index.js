@@ -269,3 +269,21 @@ $('#menu-btn').on('click', function (event) {
     event.preventDefault();
     $('#navigation').fadeToggle();
 });
+
+$('#terms_and_conditions').on('click', function () {
+    if (localStorage.getItem('lang') == 'uk') {
+        window.open(process.env.DO_FRONTEND_HOST + '/docs/TermsAndConditionsUk.html');
+    }
+    else {
+        window.open(process.env.DO_FRONTEND_HOST + '/docs/TermsAndConditionsEn.html');
+    }
+});
+
+$('#privacy_policy').on('click', function () {
+    if (localStorage.getItem('lang') == 'uk') {
+        window.open(process.env.DO_FRONTEND_HOST + '/docs/PrivacyPolicyUk.html');
+    }
+    else {
+        window.open(process.env.DO_FRONTEND_HOST + '/docs/PrivacyPolicyEn.html');
+    }
+});
