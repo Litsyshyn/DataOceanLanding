@@ -43,8 +43,6 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 5%;
-        position: relative;
-        bottom: 20px; 
     }
 
     &_payments_box{
@@ -67,7 +65,7 @@
         box-sizing: border-box;
         border-radius: 15px;
         transition: transform .3s;
-        margin: 0 1%;
+        margin: auto 1%;
         &:hover {
             transform: scale(1.15);
         } 
