@@ -269,3 +269,52 @@ $('#menu-btn').on('click', function (event) {
     event.preventDefault();
     $('#navigation').fadeToggle();
 });
+
+$.ajax({
+    url: process.env.DO_BACKEND_HOST + '/api/payment/subscriptions/',
+    type : 'get',
+    error: function() {
+        alert('ERROR.');
+      },
+    success : function(data){
+        let elements = []
+        const imgPay = [
+            'static/img/freemium_label.svg',
+            'static/img/basic_label.svg',
+            'static/img/enterprize_label.svg'
+        ]
+
+        data.forEach(function(subscription, i){
+            let html = `
+            <div class="section_payments_tariff">
+
+            <img src="${imgPay[i]}" alt='tarif_logo'></img>
+
+            <h3 class="h3">${subscription.name}</h3>
+
+            <div class="pay_descript margin-list__item">
+                <span lang="uk">
+                    Тривалість ${subscription.duration} днів. 
+                    <br>
+                        Максимальна кількість запитів:     
+                        ${subscription.requests_limit}
+                    </br>
+                </span>
+                </div>
+                <div class="price">
+                    <h1>${subscription.price}</h1>
+                    <span lang="uk">грн/міс</span>
+                </div>
+                <button type="button" class="btn-primary btn-for-pay">
+                    <span lang="uk">Обрати</span>
+                </button>
+            </div>
+            `
+          elements.push(html);
+        });
+        $('#pay-box').html(elements)
+    }
+  });
+
+
+
