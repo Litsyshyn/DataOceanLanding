@@ -273,18 +273,19 @@ $('#menu-btn').on('click', function (event) {
 $.ajax({
     url: process.env.DO_BACKEND_HOST + '/api/payment/subscriptions/',
     type : 'get',
+    dataType: "json",
     error: function() {
         alert('ERROR.');
       },
     success : function(data){
-        let elements = []
+        let elements = [];
         const imgPay = [
             'static/img/freemium_label.svg',
             'static/img/basic_label.svg',
             'static/img/enterprize_label.svg'
-        ]
+        ];
 
-        data.forEach(function(subscription, i){
+            data.forEach (function(subscription, i) {
             let html = `
             <div class="section_payments_tariff">
 
@@ -300,19 +301,31 @@ $.ajax({
                         ${subscription.requests_limit}
                     </br>
                 </span>
+                <span lang="en">
+                    Duration ${subscription.duration} days. 
+                    <br>
+                        Maximum number of requests:
+                        ${subscription.requests_limit}
+                    </br>
+                </span>
                 </div>
                 <div class="price">
                     <h1>${subscription.price}</h1>
                     <span lang="uk">грн/міс</span>
+                    <span lang="en">uah/month</span>
                 </div>
                 <button type="button" class="btn-primary btn-for-pay">
                     <span lang="uk">Обрати</span>
+                    <span lang="en">Choose</span>
                 </button>
             </div>
             `
           elements.push(html);
         });
+
         $('#pay-box').html(elements)
+
+        changeLang (window.localStorage.getItem('lang'))
     }
   });
 
