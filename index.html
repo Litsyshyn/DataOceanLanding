@@ -11,7 +11,9 @@
 <body>
     <div class="landing-dots">
         <header id="header" class="container header">
-            <img src="static/img/logo.png" class="header-logo header__item">
+            <a class="header-logo header__item link_i js-link-platform" target="_blank">
+                <img src="static/img/logo.svg">
+            </a>
             <nav>
                 <a href="#" id="menu-btn" class="menu-btn">
                     <ion-icon name="menu-outline"></ion-icon>
@@ -25,9 +27,12 @@
                         <span lang="uk">Про нас</span>
                         <span lang="en">About us</span>
                     </a>
-                    <a class="navigation__item btn-primary" href="#contact-form">
-                        <span lang="uk">Напишіть нам</span>
-                        <span lang="en">Contact us</span>
+                    <a class="navigation__item btn-secondary" href="https://dp.dataocean.us/auth/sign-in/#?" target="_blank">
+                        <span lang="uk">Увійти</span>
+                        <span lang="en">Login</span>
+                    <a class="navigation__item btn-primary" href="https://dp.dataocean.us/auth/sign-up/" target="_blank">
+                        <span lang="uk">Зареєструватись</span>
+                        <span lang="en">Sign up</span>
                     </a>
                     <button id="change-lang" class="navigation__item link link_start select_lang">
                         <img lang="en" src="static/img/ukraine_flag.svg">
@@ -47,7 +52,7 @@
                             <h1 id="explore" class="h1_top">Explore.</h1>
                             <h1 id="build" class="h1_build">Build.</h1>
                             <h1 id="develop" class="h1_develop">Develop.</h1>
-                            <a id="link_platform" class="btn-primary btn--has-shadow btn-primary_dataocean">
+                            <a class="btn-primary btn--has-shadow btn-primary_dataocean js-link-platform">
                                 <span>
                                     Data Platform
                                     <ion-icon class="btn-primary_dataocean_icon" name="chevron-forward-outline"></ion-icon>
@@ -112,7 +117,7 @@
                 <div class="col-lg-6 margin-list paragraph_large">
                     <img class="margin-list__item" src="static/img/Group_134.svg">
                     <h2 class="h2 margin-list__item">
-                        <a id="link_DO" target="_blank" class="link_i">
+                        <a class="link_i js-link-platform" target="_blank">
                             Data Platform
                             <ion-icon class="h2 margin-list__item" name="chevron-forward-outline"></ion-icon>
                         </a>                           
@@ -464,19 +469,50 @@
     <footer class="footer-wrapper">
         <div class="container">
             <div class="footer">
-                <img class="footer__item" src="static/img/logo-white.svg" class="header-logo">
-    
-                <ul class="footer__item navigation navigation_align-left navigation_white">
-                    <a class="navigation__item link link_end" href="#product">
+                <a class="footer__item link_i js-link-platform" target="_blank">
+                    <img src="static/img/logo-white.svg">
+                </a>
+                <ul class="footer__item navigation_align-left navigation_white">
+                    <li>
+                        <a class="navigation__item link link_end" href="#product">
                         <span lang="uk">Про Data Platform</span>
                         <span lang="en">About Data Platform</span>
-                    </a>
-                    <a class="navigation__item link link_end" href="#about">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="navigation__item link link_end" href="#about">
                         <span lang="uk">Про нас</span>
                         <span lang="en">About us</span>
-                    </a>
+                        </a>
+                    </li>
                 </ul>
+                <ul class="footer__item navigation_align-left navigation_white">
+                    <li>
+                        <a id="terms_and_conditions" class="navigation__item link link_end">
+                        <span lang="uk">Правила та умови</span>
+                        <span lang="en">Terms and conditions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="privacy_policy" class="navigation__item link link_end">
+                        <span lang="uk">Політика конфіденційності</span>
+                        <span lang="en"> Privacy policy</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="footer__item">
+                        <a href="https://www.facebook.com/DataOceanGroup/" target="_blank">
+                        <img class="footer__item" src="static/img/facebook.svg">
+                        </a>
+                        <a href="https://www.linkedin.com/company/data-ocean/" target="_blank">
+                        <img class="footer__item" src="static/img/linkedin.svg">
+                        </a>
+                        <a href="mailto:info@dataocean.us" target="_blank">
+                        <img class="footer__item" src="static/img/email.svg">
+                        </a>
+                </div>
             </div>
+
             <div class="footer-copyright">
                 <div class="footer-copyright__slogan">
                     <span lang="uk">Data Ocean — провайдер зручного <br>доступу до відкритих даних.</span>
