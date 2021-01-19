@@ -291,7 +291,7 @@ $.ajax({
 
             <img src="${imgPay[i]}" alt='tarif_logo'></img>
 
-            <h3 class="h3">${subscription.name}</h3>
+            <h2 class="h2">${subscription.name}</h2>
 
             <div class="pay_descript margin-list__item">
                 <span lang="uk">
