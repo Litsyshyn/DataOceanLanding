@@ -11,7 +11,9 @@
 <body>
     <div class="landing-dots">
         <header id="header" class="container header">
-            <img src="static/img/logo.png" class="header-logo header__item">
+            <a class="header-logo header__item link_i js-link-platform" target="_blank">
+                <img src="static/img/logo.svg">
+            </a>
             <nav>
                 <a href="#" id="menu-btn" class="menu-btn">
                     <ion-icon name="menu-outline"></ion-icon>
@@ -50,7 +52,7 @@
                             <h1 id="explore" class="h1_top">Explore.</h1>
                             <h1 id="build" class="h1_build">Build.</h1>
                             <h1 id="develop" class="h1_develop">Develop.</h1>
-                            <a id="link_platform" class="btn-primary btn--has-shadow btn-primary_dataocean">
+                            <a class="btn-primary btn--has-shadow btn-primary_dataocean js-link-platform">
                                 <span>
                                     Data Platform
                                     <ion-icon class="btn-primary_dataocean_icon" name="chevron-forward-outline"></ion-icon>
@@ -115,7 +117,7 @@
                 <div class="col-lg-6 margin-list paragraph_large">
                     <img class="margin-list__item" src="static/img/Group_134.svg">
                     <h2 class="h2 margin-list__item">
-                        <a id="link_DO" target="_blank" class="link_i">
+                        <a class="link_i js-link-platform" target="_blank">
                             Data Platform
                             <ion-icon class="h2 margin-list__item" name="chevron-forward-outline"></ion-icon>
                         </a>                           
@@ -452,8 +454,9 @@
     <footer class="footer-wrapper">
         <div class="container">
             <div class="footer">
-                <img class="footer__item" src="static/img/logo-white.svg" class="header-logo">
-
+                <a class="footer__item link_i js-link-platform" target="_blank">
+                    <img src="static/img/logo-white.svg">
+                </a>
                 <ul class="footer__item navigation_align-left navigation_white">
                     <li>
                         <a class="navigation__item link link_end" href="#product">
