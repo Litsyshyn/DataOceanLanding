@@ -287,7 +287,7 @@ $.ajax({
 
             <img src="${imgPay[i]}" alt='tarif_logo'></img>
 
-            <h2 class="h2">${subscription.name}</h2>
+            <h3 class="h3">${subscription.name}</h3>
 
             <div class="pay_descript margin-list__item">
                 <span lang="uk">
@@ -307,8 +307,8 @@ $.ajax({
                 </div>
                 <div class="price">
                     <h1>${subscription.price}</h1>
-                    <span lang="uk">грн/міс</span>
-                    <span lang="en">uah/month</span>
+                    <span lang="uk">грн</span>
+                    <span lang="en">UAH</span>
                 </div>
                 <button type="button" class="btn-primary btn-for-pay">
                     <span lang="uk">Обрати</span>
