@@ -308,7 +308,7 @@ $.ajax({
                 <div class="price">
                     <h1>${subscription.price}</h1>
                     <span lang="uk">грн</span>
-                    <span lang="en">uah</span>
+                    <span lang="en">UAH</span>
                 </div>
                 <button type="button" class="btn-primary btn-for-pay">
                     <span lang="uk">Обрати</span>
