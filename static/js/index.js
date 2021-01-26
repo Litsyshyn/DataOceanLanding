@@ -13,14 +13,14 @@ $(document).ready(() => {
                 $('#explore').removeClass('transparency')
             }, 1500)
         }, 1000);
-        
+
         setTimeout(() => {
             $('#build').addClass('transparency')
             setTimeout(() => {
                 $('#build').removeClass('transparency')
             }, 1500)
         }, 2500);
-    
+
         setTimeout(() => {
             $('#develop').addClass('transparency')
             setTimeout(() => {
@@ -70,7 +70,7 @@ let langs = {
         uk: 'Замала кількість символів',
         en: 'Too few symbols',
     },
-    maxSymbols: { 
+    maxSymbols: {
         uk: 'Завелика кількість символів',
         en: 'Too many symbols',
     },
@@ -177,13 +177,13 @@ $('#contact-form').submit(function(event){
 
     let phoneNumber = '';
     if (this.phone.value) {
-        phoneNumber = ' Мій контактний номер: '  + this.phone.value; 
+        phoneNumber = ' Мій контактний номер: '  + this.phone.value;
     }
-    
+
     let data = {
         name: this.username.value + ' ' + this.surname.value,
         email: this.email.value,
-        subject: this.username.value + ' ' + this.surname.value, 
+        subject: this.username.value + ' ' + this.surname.value,
         message: this.question.value + phoneNumber,
     }
 
@@ -212,9 +212,9 @@ $('#contact-form').submit(function(event){
 
 const allowedLanguages = ['uk', 'en'];
 
-function changeLang (languageCode) {  
+function changeLang (languageCode) {
     if (allowedLanguages.includes(languageCode)) {
-        window.localStorage.setItem('lang', languageCode); 
+        window.localStorage.setItem('lang', languageCode);
         $('#name')[0].placeholder = t('placeholderName');
         $('#surname')[0].placeholder = t('placeholderLastName');
         $('#question')[0].placeholder = t('placeholderQuestion');
@@ -235,7 +235,7 @@ $('#change-lang').click(function(event) {
     event.preventDefault();
     let langUser = 'uk';
     if (localStorage.getItem('lang') === 'uk') {
-        langUser = 'en'; 
+        langUser = 'en';
     }
     changeLang(langUser);
 });
@@ -250,15 +250,15 @@ $(document).ready(() => {
 });
 
 $('.js-link-platform').on('click', function () {
-    window.open(process.env.DO_FRONTEND_HOST + '/system/home/?lang=' + localStorage.getItem('lang')); 
+    window.open(process.env.DO_FRONTEND_HOST + '/system/home/?lang=' + localStorage.getItem('lang'));
 });
 
 $('#api-docs').on('click', function () {
-    window.open(process.env.DO_BACKEND_HOST + '/schema/redoc/'); 
+    window.open(process.env.DO_BACKEND_HOST + '/schema/redoc/');
 });
 
 $('#api-button').on('click', function () {
-    window.open(process.env.DO_FRONTEND_HOST + '/system/home/?lang=' + localStorage.getItem('lang')); 
+    window.open(process.env.DO_FRONTEND_HOST + '/system/home/?lang=' + localStorage.getItem('lang'));
 });
 
 $('#menu-btn').on('click', function (event) {
@@ -323,10 +323,10 @@ $.ajax({
         $('#pay-box').html(elements)
 
         changeLang (window.localStorage.getItem('lang'))
-        
+
         $('.js-subscription-select').on('click', function () {
             const subId = $(this).data('id')
-            window.open(process.env.DO_FRONTEND_HOST + '/system/subscriptions/?lang=' + localStorage.getItem('lang') + `?subscription=${subId}`); 
+            window.open(process.env.DO_FRONTEND_HOST + '/system/subscriptions/?lang=' + localStorage.getItem('lang') + `&subscription=${subId}`);
         });
     }
   });
