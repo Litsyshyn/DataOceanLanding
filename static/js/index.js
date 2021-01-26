@@ -310,7 +310,8 @@ $.ajax({
                     <span lang="uk">грн</span>
                     <span lang="en">UAH</span>
                 </div>
-                <button type="button" class="btn-primary btn-for-pay">
+
+                <button type="button" class="btn-primary btn-for-pay js-subscription-select" data-id="${subscription.id}">
                     <span lang="uk">Обрати</span>
                     <span lang="en">Choose</span>
                 </button>
@@ -322,6 +323,11 @@ $.ajax({
         $('#pay-box').html(elements)
 
         changeLang (window.localStorage.getItem('lang'))
+        
+        $('.js-subscription-select').on('click', function () {
+            const subId = $(this).data('id')
+            window.open(process.env.DO_FRONTEND_HOST + '/system/subscriptions/?lang=' + localStorage.getItem('lang') + `?subscription=${subId}`); 
+        });
     }
   });
 
