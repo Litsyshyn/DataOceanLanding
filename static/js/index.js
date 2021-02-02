@@ -242,7 +242,15 @@ $('#change-lang').click(function(event) {
 
 $(document).ready(() => {
     const langFromLocalStorage = localStorage.getItem('lang');
-    if (allowedLanguages.includes(langFromLocalStorage)) {
+    const langFromUrl = new URLSearchParams(location.search).get('lang');
+
+    if ( !langFromUrl ) {
+        return
+    }
+    
+    if (allowedLanguages.includes(langFromUrl)) {
+        changeLang(langFromUrl);
+    } else if (allowedLanguages.includes(langFromLocalStorage)) {
         changeLang(langFromLocalStorage);
     } else {
         changeLang('uk');
