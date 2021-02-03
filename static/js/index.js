@@ -253,6 +253,10 @@ $('.js-link-platform').on('click', function () {
     window.open(process.env.DO_FRONTEND_HOST + '/system/home/?lang=' + localStorage.getItem('lang')); 
 });
 
+$('.link-cpk').on('click', function () {
+    window.open('https://pep.org.ua/'+ localStorage.getItem('lang'));
+});
+
 $('#api-docs').on('click', function () {
     window.open(process.env.DO_BACKEND_HOST + '/schema/redoc/'); 
 });
