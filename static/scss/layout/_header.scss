@@ -38,16 +38,50 @@
 }
 
 .header-logo {
-    width: 15%; //200px;
+    display: flex;
+    flex-direction: row;
     object-fit: contain;
-    margin-top: unset; //margin-top: $spacer * 3;
-    margin-left: 7%; //margin-left: $spacer * 11;
-
-    @media (max-width: $sm) {
-        width: 40%;
-        margin-left: 0px;
+    cursor: pointer;
+    &_DO {
+        max-width: 40%;
     }
-    @media (max-width: $xl) {
-        margin-bottom: 2%;
+
+    &_PEP {
+        align-self: flex-end;
+        max-width: 30%;
+        margin-bottom: -1%;
+        padding-left: 7%;
+    }
+    @media (min-width: $sm) {
+        margin-top: -5%;
+        flex-direction: column;
+
+        &_DO {
+            max-width: 20%;
+        }
+
+        &_PEP {
+            align-self: flex-start;
+            max-width: 20%;
+            padding-top: 2%;
+            padding-left: 1%;
+        }
+    }
+
+    @media (min-width: $md) {
+        flex-direction: column;
+        max-width: 20%;
+        margin-top: -1%;
+
+        &_DO {
+            max-width: 167px;
+        }
+
+        &_PEP {
+            max-width: 159px;
+            align-self: flex-start;
+            padding-top: 27px;
+            padding-left: 4%;
+        }
     }
 }

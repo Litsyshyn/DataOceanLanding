@@ -11,9 +11,10 @@
 <body>
     <div class="landing-dots">
         <header id="header" class="container header">
-            <a class="header-logo header__item link_i js-link-platform" target="_blank">
-                <img src="static/img/logo.svg">
-            </a>
+            <div class="header-logo header__item">
+                <img src="static/img/logo.svg" class="header-logo_DO js-link-platform">
+                <img src="static/img/logo_pep.svg" class="header-logo_PEP link-cpk">
+            </div>
             <nav>
                 <a href="#" id="menu-btn" class="menu-btn">
                     <ion-icon name="menu-outline"></ion-icon>
@@ -469,9 +470,10 @@
     <footer class="footer-wrapper">
         <div class="container">
             <div class="footer">
-                <a class="footer__item link_i js-link-platform" target="_blank">
-                    <img src="static/img/logo-white.svg">
-                </a>
+                <div class="footer__item footer-logo">
+                    <img class="footer-logo js-link-platform" src="static/img/logo-white.svg">
+                    <img class="footer-logo footer-logo_cpk link-cpk" src="static/img/cpk.svg">
+                </div>
                 <ul class="footer__item navigation_align-left navigation_white">
                     <li>
                         <a class="navigation__item link link_end" href="#product">
@@ -512,7 +514,6 @@
                         </a>
                 </div>
             </div>
-
             <div class="footer-copyright">
                 <div class="footer-copyright__slogan">
                     <span lang="uk">Data Ocean — провайдер зручного <br>доступу до відкритих даних.</span>
