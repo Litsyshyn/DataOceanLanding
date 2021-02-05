@@ -227,6 +227,7 @@ function changeLang (languageCode) {
             }
         });
     } else {
+        changeLang('uk');
         throw new Error("LangCode " + languageCode + " not supported");
     }
 }
@@ -244,10 +245,10 @@ $(document).ready(() => {
     const langFromLocalStorage = localStorage.getItem('lang');
     const langFromUrl = new URLSearchParams(location.search).get('lang');
 
-    if ( !langFromUrl ) {
+    if (!langFromUrl) {
         return
     }
-    
+
     if (allowedLanguages.includes(langFromUrl)) {
         changeLang(langFromUrl);
     } else if (allowedLanguages.includes(langFromLocalStorage)) {
@@ -334,7 +335,7 @@ $.ajax({
 
         $('#pay-box').html(elements)
 
-        changeLang (window.localStorage.getItem('lang'))
+        changeLang(window.localStorage.getItem('lang') || 'uk')
 
         $('.js-subscription-select').on('click', function () {
             const subId = $(this).data('id')
