@@ -291,37 +291,36 @@ $.ajax({
         const imgPay = [
             'static/img/freemium_label.svg',
             'static/img/basic_label.svg',
-            'static/img/enterprize_label.svg'
         ];
 
             data.forEach (function(subscription, i) {
             let html = `
-            <div class="section_payments_tariff">
+            <div class="payments_tariff">
 
             <img src="${imgPay[i]}" alt='tarif_logo'></img>
 
             <h3 class="h3">${subscription.name}</h3>
 
-            <div class="pay_descript margin-list__item">
+            <div class="pay_descript">
                 <span lang="uk">
-                    Тривалість ${subscription.duration} днів. 
-                    <br>
-                        Максимальна кількість запитів:     
-                        ${subscription.requests_limit}
-                    </br>
+                    <br>    
+                    ${subscription.requests_limit}
+                    API-запитів
+                    <br> 
+                    ${ !subscription.is_default ? ('Необмежено переглядів') : subscription.platform_requests_limit + ' Переглядів'}
                 </span>
                 <span lang="en">
-                    Duration ${subscription.duration} days. 
                     <br>
-                        Maximum number of requests:
-                        ${subscription.requests_limit}
-                    </br>
+                    ${subscription.requests_limit}
+                    API-requests
+                    <br>
+                    ${ !subscription.is_default ? ('Unlimited views') : subscription.platform_requests_limit + ' Views'}
                 </span>
-                </div>
-                <div class="price">
-                    <h1>${subscription.price}</h1>
-                    <span lang="uk">грн</span>
-                    <span lang="en">UAH</span>
+            </div>
+            <div class="price">
+                <h1>${subscription.price}</h1>
+                    <span lang="uk">грн/міс</span>
+                    <span lang="en">UAH/month</span>
                 </div>
 
                 <button type="button" class="btn-primary btn-for-pay js-subscription-select" data-id="${subscription.id}">

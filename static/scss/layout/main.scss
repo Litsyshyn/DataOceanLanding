@@ -38,58 +38,6 @@
         font-size: $font-size-lg;
     }
 
-    &_payments_variants{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 5%;
-    }
-
-    &_payments_box{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    &_payments_tariff{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-
-        width: 380px;
-        height: 570px;
-        background: #FFFFFF;
-        border: 1px solid #BECBF2;
-        box-sizing: border-box;
-        border-radius: 15px;
-        transition: transform .3s;
-        margin: auto 1%;
-        &:hover {
-            transform: scale(1.15);
-        } 
-    }
-    
-    .price{
-        display: flex;
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 50px;
-        padding-left: 10%;
-        line-height: 61px;
-        color: #303239;
-        span {
-            font-size: 19px;
-            line-height: 22px;
-        }
-    }
-
-    .pay_descript{
-        text-align: center;
-    }
-
     @media (min-width: $lg) {
         padding: $spacer * 16 0;
         
