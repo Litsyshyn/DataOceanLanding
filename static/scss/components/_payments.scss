@@ -76,3 +76,10 @@
     height: 48px;
     width: 165px;
 }
+
+.without-vat {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 6%;
+    padding-top: 3%;
+}
