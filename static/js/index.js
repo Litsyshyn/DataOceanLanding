@@ -245,10 +245,6 @@ $(document).ready(() => {
     const langFromLocalStorage = localStorage.getItem('lang');
     const langFromUrl = new URLSearchParams(location.search).get('lang');
 
-    if (!langFromUrl) {
-        return
-    }
-
     if (allowedLanguages.includes(langFromUrl)) {
         changeLang(langFromUrl);
     } else if (allowedLanguages.includes(langFromLocalStorage)) {
@@ -283,17 +279,17 @@ $.ajax({
     url: process.env.DO_BACKEND_HOST + '/api/payment/subscriptions/',
     type : 'get',
     dataType: "json",
-    error: function() {
-        alert('ERROR.');
-      },
-    success : function(data){
+    // error: function() {
+    //     alert('ERROR.');
+    // },
+    success : function(data) {
         let elements = [];
         const imgPay = [
             'static/img/freemium_label.svg',
             'static/img/basic_label.svg',
         ];
 
-            data.forEach (function(subscription, i) {
+        data.forEach (function(subscription, i) {
             let html = `
             <div class="payments_tariff">
 
@@ -329,7 +325,7 @@ $.ajax({
                 </button>
             </div>
             `
-          elements.push(html);
+            elements.push(html);
         });
 
         $('#pay-box').html(elements)
