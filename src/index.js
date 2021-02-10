@@ -1,9 +1,9 @@
 // import * as THREE from 'three';
-import DOTS from 'vanta/dist/vanta.dots.min';
+// import DOTS from 'vanta/dist/vanta.dots.min';
+import './scss/main.scss';
 import $ from 'jquery';
 import 'jquery-validation';
 // import 'jquery-modal';
-
 
 $(document).ready(() => {
     setInterval(() => {
@@ -285,8 +285,8 @@ $.ajax({
     success : function(data) {
         let elements = [];
         const imgPay = [
-            'static/img/freemium_label.svg',
-            'static/img/basic_label.svg',
+            'img/freemium_label.svg',
+            'img/basic_label.svg',
         ];
 
         data.forEach (function(subscription, i) {
