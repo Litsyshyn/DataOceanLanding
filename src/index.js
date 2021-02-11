@@ -290,6 +290,9 @@ $.ajax({
         ];
 
         data.forEach (function(subscription, i) {
+            const requestsLimitEn = `${subscription.requests_limit.toLocaleString("en")}`;
+            const subscriptionPriceEn = `${subscription.price.toLocaleString("en")}`;
+
             let html = `
             <div class="payments_tariff">
 
@@ -307,17 +310,22 @@ $.ajax({
                 </span>
                 <span lang="en">
                     <br>
-                    ${subscription.requests_limit}
+                    ${requestsLimitEn}
                     API-requests
                     <br>
                     ${ !subscription.is_default ? ('Unlimited views') : subscription.platform_requests_limit + ' Views'}
                 </span>
             </div>
             <div class="price">
-                <h1>${subscription.price}</h1>
+                <div lang="uk">
+                    ${subscription.price}
                     <span lang="uk">грн/міс</span>
+                </div>
+                <div lang="en">
+                    ${subscriptionPriceEn}
                     <span lang="en">UAH/month</span>
                 </div>
+            </div>
 
                 <button type="button" class="btn-primary btn-for-pay js-subscription-select" data-id="${subscription.id}">
                     <span lang="uk">Обрати</span>
