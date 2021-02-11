@@ -288,11 +288,10 @@ $.ajax({
             'img/freemium_label.svg',
             'img/basic_label.svg',
         ];
-
         data.forEach (function(subscription, i) {
-            const requestsLimitEn = ${subscription.requests_limit.toLocaleString("en")};
-            const subscriptionPriceEn = ${subscription.price.toLocaleString("en")};
-
+            const requestsLimitEn = subscription.requests_limit.toLocaleString("en");
+            const subscriptionPriceEn = subscription.price.toLocaleString("en");
+            
             let html = `
             <div class="payments_tariff">
 
