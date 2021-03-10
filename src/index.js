@@ -348,17 +348,17 @@ $.ajax({
 
 $('#terms_and_conditions').on('click', function () {
     if (localStorage.getItem('lang') === 'uk') {
-        window.open(process.env.DO_FRONTEND_HOST + '/docs/TermsAndConditionsUk.html');
+        window.open(process.env.DO_FRONTEND_HOST + '/docs/TermsAndConditionsUk.html', '_self');
     } else {
-        window.open(process.env.DO_FRONTEND_HOST + '/docs/TermsAndConditionsEn.html');
+        window.open(process.env.DO_FRONTEND_HOST + '/docs/TermsAndConditionsEn.html', '_self');
     }
 });
 
 $('#privacy_policy').on('click', function () {
     if (localStorage.getItem('lang') === 'uk') {
-        window.open(process.env.DO_FRONTEND_HOST + '/docs/PrivacyPolicyUk.html');
+        window.open(process.env.DO_FRONTEND_HOST + '/docs/PrivacyPolicyUk.html', '_self');
     } else {
-        window.open(process.env.DO_FRONTEND_HOST + '/docs/PrivacyPolicyEn.html');
+        window.open(process.env.DO_FRONTEND_HOST + '/docs/PrivacyPolicyEn.html', '_self');
     }
 });
 
