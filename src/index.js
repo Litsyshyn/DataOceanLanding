@@ -55,8 +55,8 @@ $(document).ready(() => {
 
 let langs = {
     messageSuccess: {
-        uk: 'Тепер Ви будете в курсі всіх новин про DataOcean!',
-        en: 'Now you will be able to keep up with all of DataOcean updates!',
+        uk: 'Дякуємо за звернення! Постараємося відповісти якнайшвидше.',
+        en: 'Thank you for contacting us! We will get back to you soon.',
     },
     messageError: {
         uk: 'Помилка. Дані не відправлені',
