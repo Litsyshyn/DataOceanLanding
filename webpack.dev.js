@@ -12,7 +12,7 @@ module.exports = merge(common, {
 
   devServer: {
     port: 9000,
-    hot: true,
+    // hot: true,
     open: true,
   }
 });
