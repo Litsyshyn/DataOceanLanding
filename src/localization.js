@@ -59,6 +59,18 @@ let langs = {
         uk: 'Привіт, Data Ocean! Я хотів запитати...',
         en: 'Hello, Data Ocean! I would like to ask about...'
     },
+    placeholderPayNote: {
+        uk: 'Ваші пропозиції щодо умов співпраці',
+        en: 'Your suggestions on the terms of cooperation',
+    },
+    note: {
+        uk: 'Примітка',
+        en: 'Note'
+    },
+    nomark: {
+        uk: 'Примітка відстуня',
+        en: 'No mark'
+    }
 };
 
 export const t = (key) => {

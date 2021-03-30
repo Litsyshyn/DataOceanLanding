@@ -11,6 +11,9 @@ onChangeLang(() => {
     $('#name')[0].placeholder = t('placeholderName');
     $('#surname')[0].placeholder = t('placeholderLastName');
     $('#question')[0].placeholder = t('placeholderQuestion');
+    $('#username_pay')[0].placeholder = t('placeholderName');
+    $('#surname_pay')[0].placeholder = t('placeholderLastName');
+    $('#question_pay')[0].placeholder = t('placeholderPayNote');
 })
 
 $(document).ready(() => {
@@ -179,6 +182,82 @@ $('#menu-btn').on('click', function (event) {
     event.preventDefault();
     $('#navigation').fadeToggle();
 });
+
+const getPaySchema = () => {
+    return {
+        errorClass: "input_error",
+        rules: {
+            username_pay: {
+                required: true,
+                minlength: 2,
+            },
+            surname_pay: {
+                required: true,
+                minlength: 2,
+            },
+            email_pay: {
+                required: true,
+                email: true,
+            }
+        },
+        messages: {
+            username_pay: {
+                required: t('usernameRequired'),
+                minlength: t('minSymbols'),
+            },
+            surname_pay: {
+                required: t('usernameRequired'),
+                minlength: t('minSymbols'),
+            },
+            email_pay: {
+                required: t('emailRequired'),
+                email: t('emailCorrect'),
+            }
+        }
+    }
+};
+
+$('#pay-form').submit(function(event){
+    event.preventDefault();
+    let payForm = $(this);
+    payForm.validate(getPaySchema())
+    if (!payForm.valid()) {
+        return
+    }
+    let payData = {
+        name: this.username_pay.value + ' ' + this.surname_pay.value,
+        email: this.email_pay.value,
+        subject: this.username_pay.value + ' ' + this.phone_pay.value, 
+        message: this.question_pay.value ?  t('note') + ': ' + this.question_pay.value : t('nomark'),
+    }
+    $('.open-payform').fadeOut();
+    $.ajax({
+        url: process.env.DO_BACKEND_HOST + '/api/landing_mail/',
+        type: "POST",
+        dataType: "json",
+        data: payData,
+        success: function(data, status, xhr) {
+            if (xhr.status !== 200) {
+                return
+            }
+            alert(t('messageSuccess'));
+            payForm[0].reset();
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+            if (jqXhr.status === 400 || jqXhr.status === 503) {
+                alert(t('messageError'));
+            }
+            else {
+                alert(t('messageErrorUnknown') + errorMessage);
+            }
+        }
+    })
+});
+
+$('#payform-close').on('click', function () {
+    $('.open-payform').toggle();
+});
+
 
 $('#terms_and_conditions').on('click', function () {
     if (localStorage.getItem('lang') === 'uk') {

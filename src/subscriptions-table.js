@@ -35,9 +35,9 @@ class SubscriptionsTable {
       window.open(`${process.env.DO_FRONTEND_HOST}/system/subscriptions/?lang=${localStorage.getItem('lang')}&subscription=${subId}`);
     });
 
-    // $('#open-payform').on('click', function () {
-    //   $('.open-payform').fadeToggle();
-    // });
+    $('#open-payform').on('click', function () {
+      $('.open-payform').toggle();
+    });
   }
 
   getHeaders() {
